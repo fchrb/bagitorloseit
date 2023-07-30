@@ -1,3 +1,11 @@
+document.addEventListener("DOMContentLoaded", function() {
+    var myFullpage = new fullpage('.fullpage', {
+        autoScrolling:false
+    });
+});
+
+
+
 const statusElements = document.querySelectorAll('.status');
 
 statusElements.forEach(statusElement => {
