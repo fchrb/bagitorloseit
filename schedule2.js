@@ -14,19 +14,10 @@ var timezones = [
 
 function listUpcomingEvents() {
     var timeZone = document.getElementById('timeZoneSelect').value;
-    var timeMin = new Date();
-    timeMin.setHours(timeMin.getHours() - 3); // Subtract 3 hours from the current time
-
-    gapi.client.calendar.events.list({
-        'calendarId': '54cc3f6d61bba548f6de7ba85ff358d777f9a51743d7dbdccbd58e02e8d323ae@group.calendar.google.com',
-        'timeMin': timeMin.toISOString(),
-        'showDeleted': false,
-        'singleEvents': true,
-        'maxResults': 3, // only fetch the next n events
-        'orderBy': 'startTime'
-    }).then(function(response) {
-        var events = response.result.items;
-
+    fetch('/.netlify/functions/getEvents')
+      .then(response => response.json())
+      .then(data => {
+        var events = data.events;
         if (events.length > 0) {
             for (i = 0; i < events.length; i++) {
                 var event = events[i];
@@ -55,19 +46,8 @@ function listUpcomingEvents() {
     });
 }
 
-
-
-function initClient() {
-    gapi.client.init({
-      'apiKey': 'AIzaSyBeVveAKCKsH3ubCOUipcSXDAU_CPnv92A',
-      'discoveryDocs': ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"],
-    }).then(function () {
-      listUpcomingEvents();
-    });
-}
-
 function loadClient() {
-    gapi.load('client', initClient);
+    listUpcomingEvents();
 }
 
 window.onload = function() {
