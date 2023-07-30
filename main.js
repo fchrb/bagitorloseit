@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var myFullpage = new fullpage('.fullpage');
-    myFullpage.setAutoScrolling(false);
+    var myFullpage = new fullpage('.fullpage', {
+        autoScrolling: false
+    });
 });
 
 
