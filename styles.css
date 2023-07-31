@@ -294,7 +294,7 @@ body {
 
 #streamSchedule {
     width:440px;
-    min-height: 330px;
+    min-height: 260px;
     background: rgba(0, 0, 0, 0.5);
     color:#fff;
     border-radius: 10px;
@@ -319,8 +319,18 @@ body {
     width: 100%; 
 }
 
+.summary-link {
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: red;
+}
+.summary-link::before {
+    content: "\A";
+    white-space: pre;
+}
+
 .calendar-link {
-    color: lightgrey;
+    color: yellowgreen;
     text-decoration: none;
     flex-grow: 1;
     text-align: left;

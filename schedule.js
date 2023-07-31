@@ -44,12 +44,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 scheduleDisplay.innerHTML = '';
 
                 for (var i in streamsInParis) {
-                    var streamTime = new Date(streamsInParis[i].start);
+                    var streamTime = streamsInParis[i].start;
                     var formatter = new Intl.DateTimeFormat('en-US', { timeZone: timezone, month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
                     var div = document.createElement('div');
-                    div.innerHTML = formatter.format(streamTime) + " - " + streamsInParis[i].summary;
+                    div.innerHTML = formatter.format(streamTime) + ' ' + timezone;
 
+                    // Create a link for the summary
+                    var summaryLink = document.createElement('a');
+                    summaryLink.href = 'https://www.youtube.com/channel/UClft42jk2lPHSPQv9z4XB9w';
+                    summaryLink.textContent = streamsInParis[i].summary;
+                    summaryLink.className = 'summary-link';  // assign the class
+
+                    // Add the summary link to the div
+                    div.appendChild(summaryLink);
+
+                    // Append the div to the schedule
                     scheduleDisplay.appendChild(div);
+
                 }
             }
 
