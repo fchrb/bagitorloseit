@@ -185,7 +185,6 @@ body {
     }
 }
 
-
 .caption {
     width: 440px;
     margin-bottom: 70px;
@@ -319,11 +318,17 @@ body {
     width: 100%; 
 }
 
+.event-summary {
+    display: inline;  /* This will make it display in the same line */
+}
+
+
 .summary-link {
     color: white;
     text-decoration: underline;
     text-decoration-color: red;
 }
+
 .summary-link::before {
     content: "\A";
     white-space: pre;
@@ -362,36 +367,23 @@ body {
     margin-top: 10px;
 }
 
+
 #scheduleDisplay > div {
     width: 100%;
     padding: 10px; 
     margin-bottom: 10px; 
 }
 
-.event-date, .event-summary {
-    width: 100%;
-    text-align: center;
-    display: block;  /* This makes sure they stack on top of each other */
-}
-
 .event-container {
     box-sizing: border-box;
-    width: 100%;
-    border-top: 1px solid lightslategray;
-    border-bottom: 1px solid lightslategray;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    padding: 10px;
-    box-shadow: 1px 4px 6px rgba(93, 240, 100, 0.4);
+    max-width: 80%;
+    margin: 0 auto;
     color: #fff;
-    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+    box-shadow: 0 2px 6px rgba(115, 255, 0, 0.3);
 }
 
-.event-container:link, 
-.event-container:visited, 
-.event-container:hover, 
-.event-container:active {
-    color: #fff;
-    text-decoration: none;
-}
 

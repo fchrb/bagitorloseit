@@ -44,23 +44,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 scheduleDisplay.innerHTML = '';
 
                 for (var i in streamsInParis) {
-                    var streamTime = streamsInParis[i].start;
+                    var streamTime = new Date(streamsInParis[i].start);
                     var formatter = new Intl.DateTimeFormat('en-US', { timeZone: timezone, month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+                    // Create the new div and apply the event-container class
                     var div = document.createElement('div');
+                    div.className = 'event-container';
                     div.innerHTML = formatter.format(streamTime) + ' ' + timezone;
 
-                    // Create a link for the summary
+                    // Create the summary link and append it to the div
                     var summaryLink = document.createElement('a');
                     summaryLink.href = 'https://www.youtube.com/channel/UClft42jk2lPHSPQv9z4XB9w';
                     summaryLink.textContent = streamsInParis[i].summary;
-                    summaryLink.className = 'summary-link';  // assign the class
+                    summaryLink.className = 'summary-link';  // Apply the summary-link class
 
-                    // Add the summary link to the div
+                    // Append the summary link to the div
                     div.appendChild(summaryLink);
 
-                    // Append the div to the schedule
+                    // Append the div to the schedule display
                     scheduleDisplay.appendChild(div);
-
                 }
             }
 
