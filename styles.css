@@ -23,42 +23,75 @@ body {
 .fixed-strip {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     height: 200px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
-    padding: 0px 20px;
+    padding: 0px;
     box-sizing: border-box;
     z-index: 9999;
 }
 
+.logo-container {
+    position: relative;
+    /* Adjust these values to move your logo */
+    margin-left: -25px;
+  }
+
+.site-logo {
+    display: flex;
+}
+
 .site-logo h1 {
-    color: gold;
     font-size: 3em;
     font-family: 'Genos', sans-serif;
-    width: 100%;
-    /*transform: scaleY(1.3);*/
-}
-
-.title span.rotate {
-    display: inline-block; 
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
     transition: transform 0.3s ease-in-out;
-    transform-origin: left;
+    margin: 10px;
+    line-height: 1.2;
+    font-weight: 700;
 }
 
-.title span.rotate:hover {
-    transform: rotate(90deg);
+.green-candle {
+    border: 2px solid limegreen;
+    color: limegreen;
+    transform-origin: center;
+    transform: rotate(270deg) translateY(5%) translateX(-35%);
+    background-color: rgba(0, 128, 0, 0.1);
+}
+
+.red-candle-container {
+    position: relative;
+    display: inline-block;
+    transform: rotate(90deg) translateY(175%) translateX(36.7%);
+    margin-left: 50px;
+}
+
+.red-candle {
+    border: 2px solid crimson;
     color: crimson;
+    background-color: rgba(220, 20, 60, 0.05);
 }
 
-.big-letter {
-    font-size: 1.1em;
+.wick {
+    width: 2px; /* Width of the wick */
+    height: 75px; /* Length of the wick */
+    background-color: crimson; /* Color of the wick */
+    position: absolute;
+    left: 95%;
+    bottom: 46px;
+    transform: rotate(90deg);
+    transform-origin: bottom;
 }
 
-.small-letter {
-    font-size: 0.87em;
-}
+
+
+
+
 
 
 .first-page-content {
