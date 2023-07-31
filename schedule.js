@@ -24,11 +24,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
             // Your YouTube channel URL
             var youtubeUrl = "https://www.youtube.com/yourchannel";
 
+            
+
             // Sort the streams and keep only the next 2
             streamsInParis.sort(function (a, b) {
                 return a.getTime() - b.getTime();
             });
             streamsInParis = streamsInParis.slice(0, 2);
+
 
             // Fill the timezone dropdown
             var select = document.getElementById('timeZoneSelect');
