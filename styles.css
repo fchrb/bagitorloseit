@@ -141,7 +141,7 @@ body {
 
 @media (orientation: portrait) {
     .first-page-content {
-        margin-top:100px;
+        margin-top:150px;
         transform: none;
     }
 }
