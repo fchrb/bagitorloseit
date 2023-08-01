@@ -45,11 +45,11 @@ body {
 }
 
 .site-logo h1 {
-    font-size: 3em;
+    font-size: 2.7em;
     font-family: 'Genos', sans-serif;
     text-align: center;
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
     transition: transform 0.3s ease-in-out;
     margin: 10px;
     line-height: 1.2;
@@ -60,7 +60,8 @@ body {
 
 @media (max-width: 784px) {
     .site-logo h1 {
-        font-size: 2em !important; /* Adjust this value as necessary */
+        font-size: 2em !important;
+        line-height: 1.3;
     }
 }
 
@@ -75,13 +76,13 @@ body {
 .red-candle-container {
     position: relative;
     display: inline-block;
-    transform: rotate(90deg) translateY(175%) translateX(36.7%);
+    transform: rotate(90deg) translateY(220%) translateX(36.6%);
     margin-left: 50px;
 }
 
 @media (max-width: 784px) {
     .red-candle-container {
-        transform: rotate(90deg) translateY(180%) translateX(35.3%);
+        transform: rotate(90deg) translateY(210%) translateX(35.3%);
     }
 }
 
@@ -97,7 +98,7 @@ body {
     background-color: crimson; /* Color of the wick */
     position: absolute;
     left: 95%;
-    bottom: 46px;
+    bottom: 38px;
     transform: rotate(90deg);
     transform-origin: bottom;
 }
@@ -106,14 +107,9 @@ body {
     .wick {
         height: 55px;
         left: 93%;
-        bottom: 36px;
+        bottom: 33px;
     }
 }
-
-
-
-
-
 
 
 .first-page-content {
