@@ -8,19 +8,48 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }));
 
             // List of timezones
-            var timezones = [
-                'UTC',
-                'Europe/Paris',
-                'America/New_York',
-                'America/Los_Angeles',
-                'Asia/Shanghai',
-                'Asia/Kolkata',
-                'Australia/Sydney',
-                'Europe/London',
-                'Europe/Berlin',
-                'Asia/Tokyo',
-                // Add more timezones as necessary
-            ];
+var timezones = [
+    'UTC',
+    'Europe/London',
+    'Africa/Lagos',
+    'Europe/Paris',
+    'Europe/Berlin',
+    'Africa/Johannesburg',
+    'Africa/Nairobi',
+    'Asia/Kolkata',
+    'Asia/Dhaka',
+    'Asia/Shanghai',
+    'Asia/Tokyo',
+    'Australia/Sydney',
+    'America/New_York',
+    'America/Chicago',
+    'America/Los_Angeles',
+    // Add more timezones as necessary
+];
+
+// Function to format timezones to city names
+function formatTimezone(timezone) {
+    var cityNames = {
+        'UTC': 'GMT',
+        'Europe/London': 'London',
+        'Africa/Lagos': 'Lagos',
+        'Europe/Paris': 'Paris',
+        'Europe/Berlin': 'Berlin',
+        'Africa/Johannesburg': 'Johannesburg',
+        'Africa/Nairobi': 'Nairobi',
+        'Asia/Kolkata': 'Kolkata',
+        'Asia/Dhaka': 'Dhaka',
+        'Asia/Shanghai': 'Shanghai',
+        'Asia/Tokyo': 'Tokyo',
+        'Australia/Sydney': 'Sydney',
+        'America/New_York': 'New York',
+        'America/Chicago': 'Chicago',
+        'America/Los_Angeles': 'Los Angeles',
+        // Add more mappings as necessary
+    };
+    return cityNames[timezone];
+}
+
 
             // Sort the streams and keep only the next 2
             streamsInParis.sort(function (a, b) {
@@ -33,7 +62,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             for (var i in timezones) {
                 var opt = document.createElement('option');
                 opt.value = timezones[i];
-                opt.innerHTML = timezones[i];
+                opt.innerHTML = formatTimezone(timezones[i]);
                 select.appendChild(opt);
             }
 
@@ -46,7 +75,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 for (var i in streamsInParis) {
                     var streamTime = new Date(streamsInParis[i].start);
                     var formatter = new Intl.DateTimeFormat('en-US', { timeZone: timezone, month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
-                
+
                     // Create the new div and apply the event-container class
                     var div = document.createElement('div');
                     div.className = 'event-container';
@@ -54,7 +83,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     // Create a span for the stream time and append it to the div
                     var timeSpan = document.createElement('span');
                     timeSpan.className = 'event-time';
-                    timeSpan.textContent = formatter.format(streamTime) + ' ' + timezone;
+                    timeSpan.textContent = formatter.format(streamTime) + ' ' + formatTimezone(timezone);
                     div.appendChild(timeSpan);
 
                     // Create the summary link and append it to the div
@@ -66,7 +95,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
                     // Append the div to the schedule display
                     scheduleDisplay.appendChild(div);
-
                 }
             }
 
