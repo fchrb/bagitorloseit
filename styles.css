@@ -54,6 +54,14 @@ body {
     margin: 10px;
     line-height: 1.2;
     font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+@media (max-width: 784px) {
+    .site-logo h1 {
+        font-size: 2em !important; /* Adjust this value as necessary */
+    }
 }
 
 .green-candle {
@@ -71,6 +79,12 @@ body {
     margin-left: 50px;
 }
 
+@media (max-width: 784px) {
+    .red-candle-container {
+        transform: rotate(90deg) translateY(180%) translateX(35.3%);
+    }
+}
+
 .red-candle {
     border: 2px solid crimson;
     color: crimson;
@@ -86,6 +100,14 @@ body {
     bottom: 46px;
     transform: rotate(90deg);
     transform-origin: bottom;
+}
+
+@media (max-width: 784px) {
+    .wick {
+        height: 55px;
+        left: 93%;
+        bottom: 36px;
+    }
 }
 
 
