@@ -66,8 +66,8 @@ body {
 }
 
 .green-candle {
-    border: 2px solid #fff;
-    color: #fff;
+    border: 2px solid green;
+    color: green;
     transform-origin: center;
     transform: rotate(270deg) translateY(5%) translateX(-35%);
     background-color: rgba(0, 128, 0, 0.1);
@@ -259,11 +259,17 @@ body {
     font-size: 2em;
 }
 
+
 .result-field {
+    white-space: nowrap; /* prevents text wrapping */
+    overflow: hidden;   /* hides any overflow */
+    text-overflow: ellipsis; /* adds an ellipsis (...) if the text overflows */
+    width: 100%; /* make sure the field takes the full width of its parent */
     margin: 10px 0;
     line-height: 1.2em;
     height: 1.2em;
 }
+
 
 .auto-height {
     height: auto;
