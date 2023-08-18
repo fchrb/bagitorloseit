@@ -346,7 +346,8 @@ body {
 
 
 #streamSchedule {
-    width: 440px;
+    max-width: 440px;
+    width: 100%;
     min-height: 260px;
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
@@ -359,6 +360,12 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center; /* Added here */
+}
+
+@media (max-width: 480px) {
+    #streamSchedule {
+        padding: 5px; /* reduce padding for very small screens */
+    }
 }
 
 #streamSchedule h2 {
