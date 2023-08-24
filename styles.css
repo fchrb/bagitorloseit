@@ -223,7 +223,7 @@ body {
 
 .content-container {
     position: absolute;
-    bottom: 10%;
+    bottom: 20%;
     transform: translateX(-50%);
 }
 
